@@ -11,7 +11,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "axios": "^0.21",
+        "axios": "^0.21",  
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
@@ -27,7 +27,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.6.0",
-        "element-ui": "^2.15.0",
+        "element-ui": "^2.   15.0",
         "vuex": "^3.6.0"
     }
 }
