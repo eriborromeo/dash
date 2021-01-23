@@ -1,13 +1,18 @@
 <?php
 
 use Illuminate\Support\Str;
-
-$url= parse_url(getenv("CLEARDB_DATABASE_URL"));
-$host = $url["host"] ?? null;
-$username = $url["user"] ?? null;
-$password = $url["pass"] ?? null;
-$database = substr($url["path"], 1);
-
+    if ($url = env('CLEARDB_DATABASE_URL', false)) {
+        $parts = parse_url($url);
+        $host = $parts["host"];
+        $username = $parts["user"];
+        $password = $parts["pass"];
+        $database = substr($parts["path"], 1);
+    } else {
+        $host = env('DB_HOST', 'localhost');
+        $username = env('DB_USERNAME', 'forge');
+        $password = env('DB_PASSWORD', '');
+        $database = env('DB_DATABASE', 'forge');
+    }
 return [
 
     /*
